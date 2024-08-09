@@ -9,14 +9,12 @@ export const AboutSection = () => {
             <div className='container mx-auto px-5 md:px-0 flex flex-col gap-10'>
                 <div className='flex flex-col-reverse md:flex-row md:justify-between gap-10'>
                     <div className='md:basis-2/4'>
-                        <div className="flex items-center justify-center transform bg-primary w-full rounded-3xl">
-                            <div className="overflow-hidden">
-                                <img
-                                    src="images/Bikes.jpeg"
-                                    alt="Sample"
-                                    className="w-full h-full object-cover rounded-2xl"
-                                />
-                            </div>
+                        <div className="flex items-center sm:pt-4 justify-center transform bg-primary w-full rounded-xl">
+                            <img
+                                src="images/Bikes.jpeg"
+                                alt="Sample"
+                                className="w-full h-full object-cover rounded-xl sm:ml-[-2rem]"
+                            />
                         </div>
                     </div>
                     <div className='md:basis-2/4'>
