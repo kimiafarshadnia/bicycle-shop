@@ -77,7 +77,7 @@ export const Footer = () => {
 					<ul className='flex flex-col gap-2'>
 						{
 							footerMenu.map((item) => (
-								<li>
+								<li key={item.id}>
 									<Link href={item.url} className='hover:text-primary font-normal text-sm'>{item.title}</Link>
 								</li>
 							))
