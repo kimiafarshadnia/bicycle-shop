@@ -42,7 +42,7 @@ export const MainMenu = () => {
 								</div>
 							</>
 						) : (
-							<Link href={item.url} className={`${pathname.endsWith(item.url) ? 'text-primary' : ''} hover:text-primary`}>
+							<Link href={item.url || '#'} className={`${pathname.endsWith(item.url as string) ? 'text-primary' : ''} hover:text-primary`}>
 								{item.title}
 							</Link>
 						)

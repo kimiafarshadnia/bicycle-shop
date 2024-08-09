@@ -6,7 +6,7 @@ export interface MenuLink {
 export interface MenuCategory {
     title: string;
     links: MenuLink[];
-    url: string;
+    url?: string;
 }
 
 export interface MegaMenuItem {

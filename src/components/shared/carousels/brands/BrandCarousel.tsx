@@ -1,7 +1,6 @@
 'use client';
-
-import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
+import { useEffect, useState, useRef } from 'react';
 
 const brands = [
   {
@@ -42,15 +41,16 @@ export const BrandCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerSlide = 4;
   const totalSlides = Math.ceil(brands.length / itemsPerSlide);
-  const intervalRef = useRef();
+  const intervalRef = useRef<number | undefined>(undefined);
 
   const startAutoPlay = () => {
-    intervalRef.current = setInterval(() => {
+    intervalRef.current = window.setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === totalSlides - 1 ? 0 : prevIndex + 1
       );
     }, 3000);
   };
+
 
   const stopAutoPlay = () => {
     if (intervalRef.current) {
