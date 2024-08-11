@@ -38,9 +38,10 @@ export const Footer = () => {
 		}
 	]
 	return (
-		<footer>
-			<div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-10 py-5 px-5 md:px-0'>
-				<div className='flex flex-col gap-4'>
+		<footer className='bg-slate-50'>
+			<hr />
+			<div className='container mx-auto flex flex-col-reverse md:flex-row justify-between md:items-center gap-10 py-5 px-5 md:px-0'>
+				<div className='w-full flex flex-col gap-4'>
 					<div className='flex flex-shrink-0 items-center justify-center w-28 h-28 md:w-40 md:h-40'>
 						<img src="/images/logo.png" alt="logo" />
 					</div>
@@ -59,34 +60,36 @@ export const Footer = () => {
 					</ul>
 				</div>
 
-				<div className='flex flex-col gap-3'>
-					<h5 className='font-semibold capitalize'>Company Info</h5>
-					<ul className='flex flex-col gap-2'>
-						{
-							footerMenu.map((item) => (
-								<li key={item.id}>
-									<Link href={item.url} className='hover:text-primary font-normal text-sm'>{item.title}</Link>
-								</li>
-							))
-						}
-					</ul>
-				</div>
+				<div className='w-full flex flex-col md:flex-row justify-between gap-10'>
+					<div className='flex flex-col gap-3'>
+						<h5 className='font-semibold capitalize'>Company Info</h5>
+						<ul className='flex flex-col gap-2'>
+							{
+								footerMenu.map((item) => (
+									<li key={item.id}>
+										<Link href={item.url} className='hover:text-primary font-normal text-sm'>{item.title}</Link>
+									</li>
+								))
+							}
+						</ul>
+					</div>
 
-				<div className='flex flex-col gap-3'>
-					<h5 className='font-semibold capitalize'>Safe payments</h5>
-					<ul className='flex flex-col gap-2'>
-						{
-							footerMenu.map((item) => (
-								<li key={item.id}>
-									<Link href={item.url} className='hover:text-primary font-normal text-sm'>{item.title}</Link>
-								</li>
-							))
-						}
-					</ul>
+					<div className='flex flex-col gap-3'>
+						<h5 className='font-semibold capitalize'>Safe payments</h5>
+						<ul className='flex flex-col gap-2'>
+							{
+								footerMenu.map((item) => (
+									<li key={item.id}>
+										<Link href={item.url} className='hover:text-primary font-normal text-sm'>{item.title}</Link>
+									</li>
+								))
+							}
+						</ul>
+					</div>
 				</div>
 			</div>
 
-			<div className='bg-slate-50 text-center py-5 text-xs md:text-sm'>
+			<div className='bg-white text-center py-5 text-xs md:text-sm'>
 				<p>All rights reserved by <span className='text-primary'>Gulf Youth Bicycle</span>.©{(new Date().getFullYear())}</p>
 			</div>
 		</footer>

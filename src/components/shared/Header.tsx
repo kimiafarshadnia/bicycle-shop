@@ -1,9 +1,8 @@
 'use client'
 import Link from 'next/link';
-import { useState } from 'react';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
-import { DiscountNews, Icon, MainMenu, MobileMenu } from 'Components';
+import { DiscountNews, Icon, MainMenu, MobileMenu, ShoppingCard } from 'Components';
 
 export const Header = () => {
     return (
@@ -20,9 +19,7 @@ export const Header = () => {
                             <Icon iconName={faUser} size='lg' className='text-primary' />
                         </Link>
 
-                        <Link href={'/'}>
-                            <Icon iconName={faBasketShopping} size='lg' className='text-primary' />
-                        </Link>
+                        <ShoppingCard />
 
                         <MobileMenu />
                     </div>

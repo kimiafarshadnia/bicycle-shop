@@ -14,6 +14,10 @@ import { ProductsSection } from "./Home/ProductsSection";
 import { BrandSection } from "./Home/BrandSection";
 import { BrandCarousel } from "./shared/carousels/brands/BrandCarousel";
 import { MobileMenuAccordion } from "./shared/accordions/MobileMenuAccordion";
+import { Sidebar } from './product/SideBar';
+import { ProductCard } from './shared/cards/ProductCard';
+import { ProductCardSkeleton } from './shared/cards/ProductCardSkeleton';
+import { ShoppingCard } from "./shared/cards/ShoppingCard";
 
 export {
     Header,
@@ -31,5 +35,9 @@ export {
     ProductsSection,
     BrandSection,
     BrandCarousel,
-    MobileMenuAccordion
+    MobileMenuAccordion,
+    Sidebar,
+    ProductCard,
+    ProductCardSkeleton,
+    ShoppingCard
 }

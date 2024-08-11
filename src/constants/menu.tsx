@@ -16,7 +16,7 @@ export const menuData: MegaMenuData = {
         {
           title: 'category a',
           links: [
-            { title: 'Link 1', url: '/link1' },
+            { title: 'Link 1', url: '/products' },
             { title: 'Link 2', url: '/link2' },
             { title: 'Link 3', url: '/link3' },
           ],
