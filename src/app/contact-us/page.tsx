@@ -15,7 +15,7 @@ export default function ContactUs() {
                         </div>
                         <div className="basis-2/4 flex flex-col gap-6">
                             <h2 className="text-2xl md:text-4xl text-primary font-semibold capitalize">Contact Us</h2>
-                            <p className="text-sm md:text-base w-full lg:w-3/5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum deleniti tempore voluptates mollitia placeat a necessitatibus impedit odit nihil omnis error nulla corporis eius ipsa atque architecto doloremque, nobis velit!</p>
+                            <p className="text-sm md:text-base w-full lg:w-3/5">We'd love to hear from you! Whether you have questions about our products, need assistance with a recent purchase, or just want to talk bikes, we're here to help. Feel free to reach out to us at the contact information below:</p>
 
                             <div className='flex items-center gap-2'>
                                 <Icon iconName={faPhone} size='lg' />

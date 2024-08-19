@@ -1,47 +1,38 @@
 'use client';
 import Image from 'next/image';
+import { useBrandsList } from 'Hooks';
 import { useEffect, useState, useRef } from 'react';
 
-const brands = [
-  {
-    name: 'Brand One',
-    image: '/images/brands/brand1.png',
-  },
-  {
-    name: 'Brand Two',
-    image: '/images/brands/brand1.png',
-  },
-  {
-    name: 'Brand Three',
-    image: '/images/brands/brand1.png',
-  },
-  {
-    name: 'Brand Four',
-    image: '/images/brands/brand1.png',
-  },
-  {
-    name: 'Brand Five',
-    image: '/images/brands/brand1.png',
-  },
-  {
-    name: 'Brand Six',
-    image: '/images/brands/brand1.png',
-  },
-  {
-    name: 'Brand Seven',
-    image: '/images/brands/brand1.png',
-  },
-  {
-    name: 'Brand Eight',
-    image: '/images/brands/brand1.png',
-  }
-];
-
 export const BrandCarousel = () => {
+  const { brands } = useBrandsList();
+  const defaultImage = '/images/default-image-bicycle.jpeg';
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerSlide = 4;
+  const [itemsPerSlide, setItemsPerSlide] = useState(5); // Default to 5 items per slide for larger screens
   const totalSlides = Math.ceil(brands.length / itemsPerSlide);
   const intervalRef = useRef<number | undefined>(undefined);
+
+  const updateItemsPerSlide = () => {
+    if (window.innerWidth < 640) {
+      setItemsPerSlide(2);
+    }
+    else if (window.innerWidth < 768) {
+      setItemsPerSlide(3);
+    } else {
+      setItemsPerSlide(5);
+    }
+  };
+
+  useEffect(() => {
+    updateItemsPerSlide();
+    window.addEventListener('resize', updateItemsPerSlide);
+    
+    startAutoPlay();
+
+    return () => {
+      window.removeEventListener('resize', updateItemsPerSlide);
+      stopAutoPlay();
+    };
+  }, [totalSlides]);
 
   const startAutoPlay = () => {
     intervalRef.current = window.setInterval(() => {
@@ -51,19 +42,11 @@ export const BrandCarousel = () => {
     }, 3000);
   };
 
-
   const stopAutoPlay = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
   };
-
-  useEffect(() => {
-    startAutoPlay();
-    return () => {
-      stopAutoPlay();
-    };
-  }, [totalSlides]);
 
   const handlePrev = () => {
     stopAutoPlay();
@@ -82,7 +65,7 @@ export const BrandCarousel = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-fit overflow-hidden">
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -92,7 +75,7 @@ export const BrandCarousel = () => {
         {Array.from({ length: totalSlides }).map((_, slideIndex) => (
           <div
             key={slideIndex}
-            className="w-full flex-shrink-0 grid grid-cols-2 sm:grid-cols-4 gap-4 px-4"
+            className="w-full flex-shrink-0 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5"
           >
             {brands
               .slice(
@@ -104,15 +87,14 @@ export const BrandCarousel = () => {
                   key={index}
                   className="flex flex-col items-center justify-center"
                 >
-                  <div className="w-24 h-24 relative">
-                    <Image
-                      src={brand.image}
-                      alt={brand.name}
-                      layout="fill"
-                      objectFit="contain"
+                  <div className="w-24 h-24 relative flex items-center justify-center">
+                    <img
+                      src={brand.image || defaultImage}
+                      alt={brand.title}
+                      className='bg-cover rounded-lg'
                     />
                   </div>
-                  <p className="mt-2 text-center">{brand.name}</p>
+                  <p className="mt-2 text-center text-base sm:text-md font-medium">{brand.title}</p>
                 </div>
               ))}
           </div>
@@ -151,5 +133,3 @@ export const BrandCarousel = () => {
     </div>
   );
 };
-
-

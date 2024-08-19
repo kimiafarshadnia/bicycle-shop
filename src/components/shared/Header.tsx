@@ -21,7 +21,9 @@ export const Header = () => {
 
                         <ShoppingCard />
 
-                        <MobileMenu />
+                        <div className='md:hidden'>
+                            <MobileMenu />
+                        </div>
                     </div>
                 </div>
             </div>

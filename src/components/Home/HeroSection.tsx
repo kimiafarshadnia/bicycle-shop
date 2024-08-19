@@ -9,7 +9,7 @@ export const HeroSection = () => {
     const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
     return (
-        <div className='container mx-auto px-5 md:px-0 pb-5 md:pb-0'>
+        <div className='container mx-auto px-5 md:px-0 pb-5 lg:pb-0'>
             <div className='flex flex-col-reverse md:flex-row md:justify-between gap-10'>
                 <div className='md:basis-2/4'>
                     <div className='flex flex-col gap-6 pr-5'>
