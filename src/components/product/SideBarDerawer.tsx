@@ -12,9 +12,7 @@ export const SideBarDerawer = () => {
             <button
                 onClick={() => setIsDrawerOpen(true)} className='border rounded-lg'
             >
-                <IconButton>
-                    <Icon iconName={faSliders} />
-                </IconButton>
+                <Icon iconName={faSliders} />
             </button>
 
             <Drawer

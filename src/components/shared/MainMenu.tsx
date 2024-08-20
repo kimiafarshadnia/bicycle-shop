@@ -25,7 +25,7 @@ export const MainMenu = () => {
 													{category.links.map((link, linkIdx) => (
 														<li key={linkIdx}>
 															<Link
-																href={`${link.url}^${link.id}`}
+																href={`${link.url}${link.id}`}
 																className={`${pathname.endsWith(link.url) ? 'text-primary' : ''} hover:text-primary`}
 															>
 																{link.title}

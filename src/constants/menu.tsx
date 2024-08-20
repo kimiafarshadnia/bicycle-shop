@@ -32,7 +32,7 @@ export const menuData: MegaMenuData = {
       categories: [
         {
           links: [
-            { title: 'Bike Maintenance', url: '/products/category/76^', id: 119 },
+            { title: 'Bike Maintenance', url: '/products/category/76', id: 119 },
             { title: 'Bike trainer', url: '/products/category/76', id: 120 },
             { title: 'Bicycle Travel Case & Bags', url: '/products/category/76', id: 121 },
             { title: 'Apparel', url: '/products/category/76', id: 122 },

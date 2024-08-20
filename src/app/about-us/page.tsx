@@ -19,7 +19,7 @@ export default function AboutUs() {
                         </div>
                         <div className="basis-2/4 flex flex-col gap-6">
                             <h2 className="text-2xl lg:text-4xl text-primary font-semibold">Quality Products & Expert Service</h2>
-                            <p className="text-sm lg:text-base w-full xl:w-4/5">We take pride in offering a carefully curated selection of bicycles, accessories, and gear that meet the highest standards of performance and durability. Our team is composed of passionate cyclists who not only sell bikes but also ride them. This hands-on experience allows us to provide expert advice and personalized recommendations to every customer who walks through our doors. From the latest models to essential maintenance, we’ve got you covered with top-tier products and services.</p>
+                            <p className="text-sm lg:text-base w-full xl:w-4/5">We take pride in offering a carefully curated selection of bicycles, accessories, and gear that meet the highest standards of performance and durability. Our team is composed of passionate cyclists who not only sell bikes but also ride them. This hands-on experience allows us to provide expert advice and personalized recommendations to every customer who walks through our doors. From the latest models to essential maintenance, we've got you covered with top-tier products and services.</p>
                         </div>
                     </div>
 
