@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { Icon } from 'Components';
+import Link from "next/link";
+import { Icon } from "Components";
 import { withHttps } from "Utils";
-import { Social } from 'Constants';
-import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { Social } from "Constants";
+import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart() {
     return (

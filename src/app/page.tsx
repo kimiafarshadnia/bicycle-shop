@@ -6,7 +6,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <NewProducts />
-      <ParallaxScrollingEffect imageUrl={'images/parallax.jpeg'} text={'Best Rated Bicycle 2024'} />
+      <ParallaxScrollingEffect imageUrl={"images/parallax.jpeg"} text={"Best Rated Bicycle 2024"} />
       <ProductsSection />
       <BrandSection />
     </main>
