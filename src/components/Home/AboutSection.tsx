@@ -6,7 +6,7 @@ import { faClock, faDollarSign, faTags, faTruckMoving } from '@fortawesome/free-
 export const AboutSection = () => {
     return (
         <div className='bg-gray-50 py-24'>
-            <div className='container mx-auto px-5 md:px-0 flex flex-col gap-10'>
+            <div className='container mx-auto px-5 md:px-2 flex flex-col gap-10'>
                 <div className='flex flex-col-reverse md:flex-row md:justify-between gap-10'>
                     <div className='md:basis-2/4'>
                         <div className="flex items-center sm:pt-4 justify-center transform bg-primary w-full rounded-xl">

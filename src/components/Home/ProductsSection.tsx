@@ -15,7 +15,7 @@ export const ProductsSection = () => {
         setValue(newValue);
     };
     return (
-        <div className='container mx-auto px-5 md:px-0'>
+        <div className='container mx-auto px-5 md:px-2'>
             <div className='flex flex-col items-center justify-center gap-6 text-center py-24'>
                 <h2 className='text-2xl sm:text-4xl font-bold capitalize'>Products</h2>
 

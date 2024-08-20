@@ -1,7 +1,7 @@
 export default function AboutUs() {
     return (
         <main className="flex min-h-screen flex-col py-24">
-            <div className="container mx-auto px-5 md:px-0">
+            <div className="container mx-auto px-5 md:px-2">
                 <div className="flex flex-col gap-20 lg:gap-40">
                     <div className="flex flex-col lg:flex-row gap-6 lg:justify-between lg:items-center">
                         <div className="basis-2/4 h-[300px] md:h-[400px] flex items-center justify-center flex-shrink-0">

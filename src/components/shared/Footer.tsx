@@ -40,7 +40,7 @@ export const Footer = () => {
 	return (
 		<footer className='bg-slate-50'>
 			<hr />
-			<div className='container mx-auto flex flex-col-reverse md:flex-row justify-between md:items-center gap-10 py-5 px-5 md:px-0'>
+			<div className='container mx-auto flex flex-col-reverse md:flex-row justify-between md:items-center gap-10 py-5 px-5 md:px-2'>
 				<div className='w-full flex flex-col gap-4'>
 					<div className='flex flex-shrink-0 items-center justify-center w-28 h-28 md:w-40 md:h-40'>
 						<img src="/images/logo.png" alt="logo" />
