@@ -1,2 +1,2 @@
 export * from './Menu';
-export * from './product'
+export * from './product';

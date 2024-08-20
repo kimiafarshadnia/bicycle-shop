@@ -51,7 +51,7 @@ export const MobileMenu = () => {
                             <div key={index} className="mb-4 relative group">
 
                                 {item.categories ? (
-                                    <MobileMenuAccordion categories={item.categories} title={item.title}/>
+                                    <MobileMenuAccordion categories={item.categories} url={item.url} title={item.title}/>
                                 ) : (
                                     <Link
                                         href={item.url  || '#'}

@@ -12,60 +12,45 @@ export const menuData: MegaMenuData = {
     },
     {
       title: 'Bikes',
+      id: 75,
+      url: '/products/category/75',
       categories: [
         {
-          title: 'category a',
           links: [
-            { title: 'Link 1', url: '/products' },
-            { title: 'Link 2', url: '/link2' },
-            { title: 'Link 3', url: '/link3' },
-          ],
-        },
-        {
-          title: 'category b',
-          links: [
-            { title: 'Link 4', url: '/link4' },
-            { title: 'Link 5', url: '/link5' },
-            { title: 'Link 6', url: '/link6' },
-          ],
-        },
-        {
-          title: 'category c',
-          links: [
-            { title: 'Link 7', url: '/link7' },
-            { title: 'Link 8', url: '/link8' },
-            { title: 'Link 9', url: '/link9' },
+            { title: 'Helmets', url: '/products/category/75', id: 113 },
+            { title: 'Lights', url: '/products/category/75', id: 114 },
+            { title: 'Computers and sensors', url: '/products/category/75^115', id: 115 },
+            { title: 'Drivetrains', url: '/products/category/75', id: 127 }
           ],
         },
       ],
     },
     {
       title: 'Accessories',
+      id: 76,
+      url: '/products/category/76',
       categories: [
         {
-          title: 'Category A',
           links: [
-            { title: 'Link A1', url: '/linkA1' },
-            { title: 'Link A2', url: '/linkA2' },
+            { title: 'Bike Maintenance', url: '/products/category/76^', id: 119 },
+            { title: 'Bike trainer', url: '/products/category/76', id: 120 },
+            { title: 'Bicycle Travel Case & Bags', url: '/products/category/76', id: 121 },
+            { title: 'Apparel', url: '/products/category/76', id: 122 },
+            { title: 'Bike Racks & Stands', url: '/products/category/76', id: 123 },
           ],
-        },
-        {
-          title: 'Category B',
-          links: [
-            { title: 'Link B1', url: '/linkB1' },
-            { title: 'Link B2', url: '/linkB2' },
-          ],
-        },
+        }
       ],
     },
     {
       title: 'Parts',
+      id: 77,
+      url: '/products/category/77',
       categories: [
         {
-          title: 'Category X',
           links: [
-            { title: 'Link X1', url: '/linkX1' },
-            { title: 'Link X2', url: '/linkX2' },
+            { title: 'Pedals', url: '/products/category/77', id: 130 },
+            { title: 'Pumps', url: '/products/category/77', id: 124 },
+            { title: 'SCOOTER', url: '/products/category/77', id: 134 }
           ],
         },
       ],

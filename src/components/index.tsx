@@ -1,24 +1,26 @@
+import { Icon } from './shared/Icon';
 import { Footer } from "./shared/Footer";
 import { Header } from "./shared/Header";
-import { DiscountNews } from './shared/DiscountNews';
+import { Sidebar } from './product/SideBar';
 import { MainMenu } from './shared/MainMenu';
 import { MobileMenu } from './shared/MobileMenu';
-import { Icon } from './shared/Icon';
 import { HeroSection } from "./Home/HeroSection";
-import { HeroCarousel } from "./shared/carousels/hero/HeroCarousel";
-import { AboutSection } from "./Home/AboutSection";
-import { ParallaxScrollingEffect } from "./Home/ParallaxScrollingEffect";
 import { NewProducts } from "./Home/NewProducts";
-import { CardProduct } from "./shared/CardProduct";
-import { ProductsSection } from "./Home/ProductsSection";
+import { ProductCard } from './cards/ProductCard';
+import { AboutSection } from "./Home/AboutSection";
 import { BrandSection } from "./Home/BrandSection";
+import { SearchInput } from './filters/SearchInput';
+import { ShoppingCard } from "./cards/ShoppingCard";
+import { DiscountNews } from './shared/DiscountNews';
+import { ProductsSection } from "./Home/ProductsSection";
+import { SidebarContent } from './product/SidebarContent';
+import { SideBarDerawer } from './product/SideBarDerawer';
+import { ShoppingCartItem } from "./cards/ShoppingCardItem";
+import { ProductCardSkeleton } from './cards/ProductCardSkeleton';
+import { ShoppingCardContent } from "./cards/ShoppingCardContent";
 import { BrandCarousel } from "./shared/carousels/brands/BrandCarousel";
+import { ParallaxScrollingEffect } from "./Home/ParallaxScrollingEffect";
 import { MobileMenuAccordion } from "./shared/accordions/MobileMenuAccordion";
-import { Sidebar } from './product/SideBar';
-import { ProductCard } from './shared/cards/ProductCard';
-import { ProductCardSkeleton } from './shared/cards/ProductCardSkeleton';
-import { ShoppingCard } from "./shared/cards/ShoppingCard";
-
 export {
     Header,
     Footer,
@@ -27,17 +29,20 @@ export {
     MobileMenu,
     Icon,
     HeroSection,
-    HeroCarousel,
     AboutSection,
     ParallaxScrollingEffect,
     NewProducts,
-    CardProduct,
+    ProductCard,
     ProductsSection,
     BrandSection,
     BrandCarousel,
     MobileMenuAccordion,
     Sidebar,
-    ProductCard,
+    SidebarContent,
+    SideBarDerawer,
     ProductCardSkeleton,
-    ShoppingCard
+    ShoppingCard,
+    ShoppingCardContent,
+    ShoppingCartItem,
+    SearchInput
 }

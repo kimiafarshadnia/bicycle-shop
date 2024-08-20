@@ -17,19 +17,22 @@ export default function ContactUs() {
                             <h2 className="text-2xl md:text-4xl text-primary font-semibold capitalize">Contact Us</h2>
                             <p className="text-sm md:text-base w-full lg:w-3/5">We'd love to hear from you! Whether you have questions about our products, need assistance with a recent purchase, or just want to talk bikes, we're here to help. Feel free to reach out to us at the contact information below:</p>
 
-                            <div className='flex items-center gap-2'>
+                            <div className='flex gap-2'>
                                 <Icon iconName={faPhone} size='lg' />
-                                <span>522156341564165</span>
+                                <div className='flex flex-col gap-2'>
+                                    <span>+974 4455 1092</span>
+                                    <span>+974 3389 7909</span>
+                                </div>
                             </div>
 
                             <div className='flex items-center gap-2'>
                                 <Icon iconName={faEnvelope} size='lg' />
-                                <span>example@gmail.com</span>
+                                <span>gulfyouthbicycle@yahoo.com</span>
                             </div>
 
                             <div className='flex items-center gap-2'>
                                 <Icon iconName={faLocationDot} size='lg' />
-                                <span>hgvgfhgjvb kjhujkhbuj khjiohjiuk</span>
+                                <span>P.O Box 9580, Al wakra Road,Building No:9,Shop No:1</span>
                             </div>
 
                             <ul className='flex items-center gap-4'>

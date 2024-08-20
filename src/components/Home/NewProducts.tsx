@@ -1,23 +1,61 @@
-'use client'
-import Link from 'next/link';
-import { CardProduct } from 'Components';
+'use client';
+import { useLatestProducts } from 'Hooks';
+import { Icon, ProductCard } from 'Components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { Navigation, Pagination } from 'swiper/modules';
+import { faBicycle } from '@fortawesome/free-solid-svg-icons';
+
 export const NewProducts = () => {
+  const { products, loading, error } = useLatestProducts();
 
-    return (
-        <div className='container mx-auto px-5 md:px-0'>
-            <div className='flex flex-col items-center justify-center gap-6 text-center py-24'>
-                <h2 className='text-2xl sm:text-4xl font-bold capitalize'>new products</h2>
+  if (error) {
+    return <p className="text-red-500">{error}</p>;
+  }
 
-                <div className='flex flex-row overflow-x-scroll justify-center gap-6'>
-                    <CardProduct />
-                    <CardProduct />
-                    <CardProduct />
-                </div>
+  return (
+    <div className='container mx-auto px-5 md:px-0'>
+      <div className='flex flex-col items-center justify-center gap-6 text-center py-24'>
+        <h2 className='text-2xl sm:text-4xl font-bold capitalize'>New Products</h2>
 
-                <Link href={'/products'} className='w-fit h-fit px-5 py-2 rounded-full text-white bg-primary duration-300 hover:border-2 hover:border-primary hover:text-primary hover:bg-white'>
-                    more
-                </Link>
-            </div>
-        </div>
-    );
+        {loading ? (
+          <Icon iconName={faBicycle} size='xl' className="animate-spin text-primary" />
+        ) : (
+          <div className="w-full">
+            <Swiper
+            centeredSlidesBounds
+              modules={[Navigation, Pagination]}
+              spaceBetween={10}
+              slidesPerView={1}
+              breakpoints={{
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                }
+              }}
+              
+              className="swiper-container"
+            >
+              {products.map((product) => (
+                <SwiperSlide key={product.id}>
+                  <ProductCard product={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };

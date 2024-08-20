@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link';
-import { CardProduct } from 'Components';
+import { ProductCard } from 'Components';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -22,19 +22,15 @@ export const ProductsSection = () => {
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <TabList onChange={handleChange} aria-label="lab API tabs example">
-                            <Tab label="Item One" value="1" />
-                            <Tab label="Item Two" value="2" />
-                            <Tab label="Item Three" value="3" />
+                            <Tab label="Bikes" value="1" />
+                            <Tab label="Accessories" value="2" />
+                            <Tab label="Parts" value="3" />
                         </TabList>
                     </Box>
-                    <TabPanel value="1">Item One</TabPanel>
-                    <TabPanel value="2">Item Two</TabPanel>
-                    <TabPanel value="3">Item Three</TabPanel>
+                    <TabPanel value="1">Bikes</TabPanel>
+                    <TabPanel value="2">Accessories</TabPanel>
+                    <TabPanel value="3">Parts</TabPanel>
                 </TabContext>
-
-                <Link href={'/products'} className='w-fit h-fit px-5 py-2 rounded-full text-white bg-primary duration-300 hover:border-2 hover:border-primary hover:text-primary hover:bg-white'>
-                    more
-                </Link>
             </div>
         </div>
     );

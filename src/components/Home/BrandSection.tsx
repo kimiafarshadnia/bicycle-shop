@@ -2,7 +2,6 @@
 import { BrandCarousel } from "Components";
 
 export const BrandSection = () => {
-
     return (
         <div className="bg-gray-50">
             <div className='container mx-auto px-5 md:px-0'>

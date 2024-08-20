@@ -1,25 +1,20 @@
-import { faFacebookF, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const Social = [
     {
         id: 0,
-        nameIcon: faTwitter,
-        url:""
+        nameIcon: faFacebookF,
+        url:"www.facebook.com/share/ZyMoS525suGeiBQn/?mibextid=LQQJ4d"
     },
     {
         id: 1,
-        nameIcon: faFacebookF,
-        url:""
+        nameIcon: faInstagram,
+        url:"www.instagram.com/gulfyouthbicycle?igsh=eGZsNGR4b3Z5bWlx"
     },
     {
         id: 2,
-        nameIcon: faInstagram,
-        url:""
-    },
-    {
-        id: 3,
         nameIcon: faEnvelope,
-        url:"mailto:"
+        url:"mailto:gulfyouthbicycle@yahoo.com"
     }
 ]

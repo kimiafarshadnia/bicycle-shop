@@ -1,10 +1,10 @@
 export interface MenuLink {
     title: string;
     url: string;
+    id: number;
 }
 
 export interface MenuCategory {
-    title: string;
     links: MenuLink[];
     url?: string;
 }
@@ -12,7 +12,8 @@ export interface MenuCategory {
 export interface MegaMenuItem {
     title: string;
     categories?: MenuCategory[];
-    url?: string;
+    url: string;
+    id?: number;
 }
 
 export interface MegaMenuData {
