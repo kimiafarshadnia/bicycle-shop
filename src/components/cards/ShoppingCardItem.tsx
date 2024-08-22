@@ -45,7 +45,7 @@ export const ShoppingCartItem = ({ id, quantity, size, color }: CartProps) => {
                 </div>
                 <div className="flex items-center gap-2 text-xs md:text-sm font-semibold">
                     <span>QAR</span>
-                    <span>123123{product.price}</span>
+                    <span>{product.price}</span>
                 </div>
                 <span  className='text-bold text-red-700'>{size && size}</span>
                 <span  className='text-bold text-red-700'>{color && color}</span>
