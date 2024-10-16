@@ -55,7 +55,7 @@ export const MobileMenu = () => {
                                 ) : (
                                     <Link
                                         href={item.url  || '#'}
-                                        className={`${pathname.endsWith(item.url as string) ? 'text-primary' : ''} hover:text-primary`}
+                                        className='hover:text-primary'
                                     >
                                         {item.title}
                                     </Link>

@@ -4,23 +4,13 @@ import { Icon } from 'Components';
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useSearchContext } from 'Context';
 
 export const SearchInput = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [inputValue, setInputValue] = useState<string>('');
+  const { searchQuery, setSearchQuery } = useSearchContext();
 
-  useEffect(() => {
-    const searchQuery = searchParams.get('search_title') || '';
-    setInputValue(searchQuery);
-  }, [searchParams]);
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleSearchSubmit = () => {
-    router.push(`/products/?search_title=${inputValue}`);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);  // Update the search query in context
   };
 
   return (
@@ -28,17 +18,17 @@ export const SearchInput = () => {
       <div className="flex w-full lg:w-[220px] border rounded-lg bg-gray-50">
         <input
           type="text"
-          value={inputValue}
-          onChange={handleSearchChange}
+          className="w-full p-2 border rounded"
+          value={searchQuery}
+          onChange={handleInputChange}
           placeholder="Search products..."
-          className="w-full p-2  border-gray-300 rounded-l-lg"
         />
-        <button
+        {/* <button
           onClick={handleSearchSubmit}
           className=" pr-2"
         >
           <Icon iconName={faMagnifyingGlass} size='lg' className='text-primary' />
-        </button>
+        </button> */}
       </div>
     </div>
   );

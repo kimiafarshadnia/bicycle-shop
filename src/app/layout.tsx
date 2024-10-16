@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "Components";
-import { CartProvider, SearchProvider } from "Context";
+import { CartProvider, SearchProvider, BrandProvider } from "Context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,13 +18,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white">
-      <SearchProvider>
-        <CartProvider>
-          <Header />
-          {children}
-          <Footer />
-        </CartProvider>
-      </SearchProvider>
+        <SearchProvider>
+          <BrandProvider>
+            <CartProvider>
+              <Header />
+              {children}
+              <Footer />
+            </CartProvider>
+          </BrandProvider>
+        </SearchProvider>
       </body>
     </html>
   );

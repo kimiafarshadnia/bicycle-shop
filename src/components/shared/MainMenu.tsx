@@ -14,7 +14,7 @@ export const MainMenu = () => {
 					<div className="relative group" key={index}>
 						{item.categories ? (
 							<>
-								<Link href={item.url} className="hover:text-primary">
+								<Link href={item.url} className={`${pathname.endsWith(item.url) ? 'text-primary font-semibold' : ''} hover:text-primary`}>
 									{item.title}
 								</Link>
 								<div className="absolute w-[320px] bg-white left-0 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transform scale-y-0 group-hover:scale-y-100 transition-all duration-300 origin-top">
@@ -26,7 +26,7 @@ export const MainMenu = () => {
 														<li key={linkIdx}>
 															<Link
 																href={`${link.url}${link.id}`}
-																className={`${pathname.endsWith(link.url) ? 'text-primary' : ''} hover:text-primary`}
+																className="hover:text-primary"
 															>
 																{link.title}
 															</Link>

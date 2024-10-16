@@ -1,7 +1,8 @@
-import axios from 'axios';
-import { Product, ApiResponse, ProductDetail, BrandResponse } from 'Types';
-import { useEffect, useState } from 'react';
+"use client"
 
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { ApiResponse, Product, ProductDetail } from '@/src/types';
 
 interface ProductsList {
   products: Product[];
@@ -14,7 +15,12 @@ interface ProductsList {
   setPage: (page: number) => void;
 }
 
-export const useProductsList = (initialPage: number = 1, searchCategoryId?: number, searchQuery?: string): ProductsList => {
+export const useProductsList = (
+  initialPage: number = 1,
+  searchCategoryId?: number,
+  searchQuery?: string,
+  selectedBrand?: number // Added selectedBrand for brand filtering
+): ProductsList => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -34,8 +40,8 @@ export const useProductsList = (initialPage: number = 1, searchCategoryId?: numb
           params: {
             page,
             search_category: searchCategoryId,
-            search_title: searchQuery
-
+            search_title: searchQuery,
+            search_brand: selectedBrand, // Added the search_brand parameter for brand filtering
           },
         });
         setProducts(response.data.data.items);
@@ -50,12 +56,13 @@ export const useProductsList = (initialPage: number = 1, searchCategoryId?: numb
       }
     };
 
-
     fetchData();
-  }, [page, searchCategoryId, searchQuery]);
+  }, [page, searchCategoryId, searchQuery, selectedBrand]); // Added selectedBrand to the dependency array
 
   return { products, loading, error, pagination, setPage };
 };
+
+
 
 export const useProductDetail = (id: number) => {
   const [product, setProduct] = useState<Product | null>(null);

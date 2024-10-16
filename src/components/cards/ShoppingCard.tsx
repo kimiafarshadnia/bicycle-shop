@@ -8,6 +8,9 @@ import { useCartContext } from 'Context';
 export const ShoppingCard = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const { cartQuantity } = useCartContext()
+    const closeDrawerHandler=()=>{
+        setIsDrawerOpen(false)
+    }
     return (
         <div>
             <div className='relative'>
@@ -23,10 +26,10 @@ export const ShoppingCard = () => {
             <Drawer
                 anchor="left"
                 open={isDrawerOpen}
-                onClose={() => setIsDrawerOpen(false)}
+                onClose={closeDrawerHandler}
                 classes={{ paper: 'w-64 md:w-[400px]' }}
             >
-                <ShoppingCardContent />
+                <ShoppingCardContent onClose={closeDrawerHandler}/>
             </Drawer>
         </div>
     );

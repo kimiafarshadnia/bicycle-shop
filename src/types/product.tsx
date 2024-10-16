@@ -1,11 +1,13 @@
 export interface Variant {
-  variant_value: string;
-  sku: string;
+  id: number;
+  sku?: string;
   title: string;
-  price: number;
-  discount_type: string;
-  discount: number;
-  stock: number;
+  slug: string;
+  variant_value: string;
+  price?: number;
+  discount_type?: string;
+  discount?: number;
+  stock?: number;
 }
 export interface Category {
   id: number;
@@ -51,8 +53,6 @@ export interface Product {
   category: Category;
   brand: Brand;
   features: ProductFeature[];
-  images?: string[];
-  tags: string[];
   shipping_info: {
     product_id: number;
     width: number | null;
@@ -64,10 +64,11 @@ export interface Product {
     weight: number | null;
     weight_unit: string | null;
   };
-  creator: {
-    id: number;
-    name: string;
-  };
+  images: string[];
+  tags: string[];
+  description: string;
+  variant_features: string;
+  variants: Variant[];
   tax: number | null;
   published: string;
   created_at: string;
@@ -77,9 +78,9 @@ export interface Product {
   discount_type: string;
   discount_amount: number | null;
 }
-
 export interface BrandResponse {
   data: {
-      items: Brand[];
+    items: Brand[];
   };
 }
+

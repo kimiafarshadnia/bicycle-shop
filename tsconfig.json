@@ -42,6 +42,9 @@
       ],
       "Hooks": [
         "./src/hooks"
+      ],
+      "Services": [
+        "./src/services"
       ]
     },
     "forceConsistentCasingInFileNames": true

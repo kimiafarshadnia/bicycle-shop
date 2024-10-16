@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animations */
 @keyframes slide {
   0% { transform: translateY(100%); }
   10% { transform: translateY(0); }
@@ -10,19 +11,26 @@
 }
 
 .animate-slide {
-  animation: slide 3s infinite;
+  animation: slide 3s infinite; /* Directly set the animation property */
 }
 
-.swiper-container {
-  width: 100%;
+/* Custom MUI Tab Styles */
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #8A1538 !important;
 }
 
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #8A1538 !important;
+}
+
+/* Swiper Styles */
+.swiper-container,
 .swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper-slide {
+.swiper-slide-home {
   font-size: 18px;
   width: 250px !important;
   height: 300px !important;
@@ -31,12 +39,23 @@
   align-items: center;
 }
 
+.swiper-slide-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .swiper-slide img {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   object-fit: cover;
 }
 
+.swiperSlideThumb {
+  height: 100px !important;
+}
+
+/* No Scrollbar Styles */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -44,9 +63,4 @@
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
-
-.swiper-wrapper {
-  justify-content: center;
-  gap: 20px;
 }

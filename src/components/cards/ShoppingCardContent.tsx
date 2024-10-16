@@ -4,7 +4,11 @@ import { useProductsList } from 'Hooks';
 import { useCartContext } from 'Context';
 import { ShoppingCartItem } from 'Components';
 
-export const ShoppingCardContent = () => {
+type Props = {
+    onClose : ()=>void
+}
+
+export const ShoppingCardContent = ({onClose}: Props) => {
     const { products } = useProductsList();
     const { cartItems } = useCartContext()
     
@@ -39,9 +43,9 @@ export const ShoppingCardContent = () => {
                                 </span>
                             </div>
 
-                            <Link href={'/cart'} className='w-full h-fit text-center px-5 py-2 rounded-full text-white bg-primary duration-300 hover:border-2 hover:border-primary hover:text-primary hover:bg-white'>checkout</Link>
+                            <Link href={'/cart'} className='w-full h-fit text-center px-5 py-2 rounded-full text-white bg-primary duration-300 hover:border-2 hover:border-primary hover:text-primary hover:bg-white capitalize'>checkout</Link>
 
-                            <Link href={'/cart'} className='w-full h-fit text-center px-5 py-2 rounded-full text-white bg-primary duration-300 hover:border-2 hover:border-primary hover:text-primary hover:bg-white'>checkout</Link>
+                            <button type='button' onClick={onClose} className='w-full h-fit text-center px-5 py-2 rounded-full text-white bg-primary duration-300 hover:border-2 hover:border-primary hover:text-primary hover:bg-white capitalize'>keep shopping</button>
                         </div>
                     </>
                 ) : (

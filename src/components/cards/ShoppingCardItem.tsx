@@ -8,14 +8,14 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 type CartProps = {
     id: number;
     quantity: number;
-    size?: number;
-    color?: string;
+    size: number;
+    color: string;
 }
 
 export const ShoppingCartItem = ({ id, quantity, size, color }: CartProps) => {
 
     const { product } = useProductDetail(id);
-    const { updateItemQuantity, decreaseItem, removeItem } = useCartContext()
+    const { updateItemQuantity, decreaseItem, removeUnickItem } = useCartContext()
     const defaultImage = '/images/default-image-bicycle.jpeg';
 
     if (product == null) return null
@@ -29,7 +29,7 @@ export const ShoppingCartItem = ({ id, quantity, size, color }: CartProps) => {
                     </div>
                     <span className='text-xs sm:text-sm font-bold'>{product.title}</span>
                 </div>
-                <button type='button' className='h-fit' onClick={() => removeItem(product.id)}>
+                <button type='button' className='h-fit' onClick={() => removeUnickItem(product.id, size, color)}>
                     <Icon iconName={faTrashCan} className="text-red-600" />
                 </button>
             </div>

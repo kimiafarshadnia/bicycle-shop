@@ -20,7 +20,7 @@ export const MobileMenuAccordion = ({ categories, url, title }: Props) => {
         <AccordionGroup className='p-0'>
             <Accordion>
                 <AccordionSummary className='p-0 w-full text-left font-semibold'>
-                    <Link href={url} className="hover:text-primary">
+                    <Link href={url} className={`${pathname.endsWith(url) ? 'text-primary font-semibold' : ''} hover:text-primary`}>
                         {title}
                     </Link>
                 </AccordionSummary>
@@ -33,7 +33,7 @@ export const MobileMenuAccordion = ({ categories, url, title }: Props) => {
                                         <li key={linkIdx}>
                                             <Link
                                                 href={link.url}
-                                                className={`${pathname.endsWith(link.url) ? 'text-primary' : ''} hover:text-primary`}
+                                                className='hover:text-primary'
                                             >
                                                 {link.title}
                                             </Link>

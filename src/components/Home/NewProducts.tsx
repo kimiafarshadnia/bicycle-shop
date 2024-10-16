@@ -1,13 +1,12 @@
 'use client';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { useLatestProducts } from 'Hooks';
 import { Icon, ProductCard } from 'Components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import { Navigation, Pagination } from 'swiper/modules';
-import { faBicycle } from '@fortawesome/free-solid-svg-icons';
 
 export const NewProducts = () => {
   const { products, loading, error } = useLatestProducts();
@@ -22,7 +21,7 @@ export const NewProducts = () => {
         <h2 className='text-2xl sm:text-4xl font-bold capitalize'>New Products</h2>
 
         {loading ? (
-          <Icon iconName={faBicycle} size='xl' className="animate-spin text-primary" />
+           <p>Loading...</p>
         ) : (
           <div className="w-full">
             <Swiper

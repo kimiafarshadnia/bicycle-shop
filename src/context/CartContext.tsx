@@ -20,6 +20,7 @@ type CartContextType = {
     updateItemQuantity: (id: number, quantity: number) => void
     addItem: (id: number, size: number, color: string) => void
     decreaseItem: (id: number) => void
+    removeUnickItem: (id: number, size: number, color: string) => void
     removeItem: (id: number) => void
     cartQuantity: number
     cartItems: CartItem[]
@@ -85,6 +86,10 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         });
     };
 
+    const removeUnickItem = (id: number, size: number, color: string) => {
+        setCartItems(prevItems => prevItems.filter(item => !(item.id === id && item.size === size && item.color === color)));
+    };
+
     const removeItem = (id: number) => {
         setCartItems(prevItems => prevItems.filter(item => item.id !== id));
     };
@@ -96,6 +101,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
                 updateItemQuantity,
                 addItem,
                 decreaseItem,
+                removeUnickItem,
                 removeItem,
                 cartQuantity,
                 cartItems
