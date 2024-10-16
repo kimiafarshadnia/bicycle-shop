@@ -9,8 +9,8 @@ export const TagsProduct = ({ tags }: Tags) => {
         <div className="flex flex-col gap-2 items-start">
             <h4 className="font-bold text-base">tags:</h4>
             <div className="flex flex-row gap-3">
-                {tags.map((tag) => (
-                    <span className="text-gray-400 text-xs">{tag}</span>
+                {tags.map((tag, index) => (
+                    <span key={index} className="text-gray-400 text-xs">{tag}</span>
                 ))}
             </div>
         </div>

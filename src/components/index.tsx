@@ -25,7 +25,6 @@ import { ProductCardSkeleton } from './cards/ProductCardSkeleton';
 import { ShoppingCardContent } from "./cards/ShoppingCardContent";
 import { SearchContainer } from './product/section/SearchContainer';
 import { VariableProduct } from './product/section/VariableProduct';
-import { SystemErrorAlert } from './shared/feature/SystemErrorAlert';
 import { ParallaxScrollingEffect } from "./Home/ParallaxScrollingEffect";
 import { ProductImageGallery } from "./product/section/ProductImageGallery";
 import { MobileMenuAccordion } from "./shared/accordions/MobileMenuAccordion";
@@ -58,7 +57,6 @@ export {
     TagsProduct,
     BrandSelect,
     ProductList,
-    SystemErrorAlert,
     SearchContainer,
     NoContent
 }
